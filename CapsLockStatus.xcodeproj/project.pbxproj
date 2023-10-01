@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		718C1D9E2AC8C1190019A29E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718C1D9D2AC8C1190019A29E /* AppDelegate.swift */; };
-		718C1DA02AC8C1190019A29E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718C1D9F2AC8C1190019A29E /* ViewController.swift */; };
 		718C1DA22AC8C11A0019A29E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 718C1DA12AC8C11A0019A29E /* Assets.xcassets */; };
 		718C1DA52AC8C11A0019A29E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718C1DA32AC8C11A0019A29E /* Main.storyboard */; };
 /* End PBXBuildFile section */
@@ -16,7 +15,6 @@
 /* Begin PBXFileReference section */
 		718C1D9A2AC8C1190019A29E /* CapsLockStatus.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CapsLockStatus.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		718C1D9D2AC8C1190019A29E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		718C1D9F2AC8C1190019A29E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		718C1DA12AC8C11A0019A29E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		718C1DA42AC8C11A0019A29E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		718C1DA62AC8C11A0019A29E /* CapsLockStatus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CapsLockStatus.entitlements; sourceTree = "<group>"; };
@@ -53,7 +51,6 @@
 			isa = PBXGroup;
 			children = (
 				718C1D9D2AC8C1190019A29E /* AppDelegate.swift */,
-				718C1D9F2AC8C1190019A29E /* ViewController.swift */,
 				718C1DA12AC8C11A0019A29E /* Assets.xcassets */,
 				718C1DA32AC8C11A0019A29E /* Main.storyboard */,
 				718C1DA62AC8C11A0019A29E /* CapsLockStatus.entitlements */,
@@ -131,7 +128,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				718C1DA02AC8C1190019A29E /* ViewController.swift in Sources */,
 				718C1D9E2AC8C1190019A29E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +271,7 @@
 				DEVELOPMENT_TEAM = F2MP7G7FM5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;
@@ -302,6 +299,7 @@
 				DEVELOPMENT_TEAM = F2MP7G7FM5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				INFOPLIST_KEY_NSMainStoryboardFile = Main;
 				INFOPLIST_KEY_NSPrincipalClass = NSApplication;

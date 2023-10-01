@@ -6,25 +6,58 @@
 //
 
 import Cocoa
+import ServiceManagement
 
 @main
 class AppDelegate: NSObject, NSApplicationDelegate {
-
     
-
-
+    var statusItem: NSStatusItem!
+    
     func applicationDidFinishLaunching(_ aNotification: Notification) {
-        // Insert code here to initialize your application
+        do {
+            if SMAppService.mainApp.status != .enabled {
+                try SMAppService.mainApp.register()
+            }
+        } catch {
+            print("failed to enable launch at login: \(error.localizedDescription)")
+        }
+         
+        statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
+        
+        let menu = NSMenu()
+        menu.addItem(NSMenuItem(title: "Quit", action: #selector(quitApp), keyEquivalent: "q"))
+        statusItem.menu = menu
+        
+        updateMenuBarIcon(isCapsLockOn: isCapslockEnabled())
+        
+        NSEvent.addGlobalMonitorForEvents(matching: .flagsChanged, handler: { [weak self] event in
+            guard let self = self else { return }
+            let isOn = self.isCapslockEnabled()
+            self.updateMenuBarIcon(isCapsLockOn: isOn)
+        })
     }
-
-    func applicationWillTerminate(_ aNotification: Notification) {
-        // Insert code here to tear down your application
+    
+    @objc func quitApp() {
+        NSApplication.shared.terminate(self)
     }
-
-    func applicationSupportsSecureRestorableState(_ app: NSApplication) -> Bool {
-        return true
+    
+    func isCapslockEnabled() -> Bool {
+        return NSEvent.modifierFlags.intersection(.deviceIndependentFlagsMask).contains(.capsLock)
     }
-
-
+    
+    func updateMenuBarIcon(isCapsLockOn: Bool) {
+        if isCapsLockOn {
+            let size = NSSize(width: 14, height: 14)
+            let image = NSImage(size: size)
+            
+            image.lockFocus()
+            NSColor.red.set()
+            NSBezierPath(ovalIn: NSRect(x: 0, y: 0, width: size.width, height: size.height)).fill()
+            image.unlockFocus()
+            
+            statusItem.button?.image = image
+        } else {
+            statusItem.button?.image = nil
+        }
+    }
 }
-
