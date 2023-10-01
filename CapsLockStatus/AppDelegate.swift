@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  CapsLockStatus
-//
-//  Created by Dmitriy Portenko on 30.09.2023.
-//
-
 import Cocoa
 import ServiceManagement
 
@@ -13,6 +6,16 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     var statusItem: NSStatusItem!
 
     func applicationDidFinishLaunching(_: Notification) {
+        initializeAppService()
+        initializeStatusMenu()
+        monitorCapsLockChanges()
+    }
+
+    @objc func quitApp() {
+        NSApplication.shared.terminate(self)
+    }
+
+    private func initializeAppService() {
         do {
             if SMAppService.mainApp.status != .enabled {
                 try SMAppService.mainApp.register()
@@ -20,46 +23,27 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         } catch {
             print("failed to enable launch at login: \(error.localizedDescription)")
         }
+    }
 
+    private func initializeStatusMenu() {
         statusItem = NSStatusBar.system.statusItem(withLength: NSStatusItem.variableLength)
-
         let menu = NSMenu()
         menu.addItem(NSMenuItem(title: "Quit", action: #selector(quitApp), keyEquivalent: "q"))
         statusItem.menu = menu
+        updateMenuBarIcon(isCapsLockOn: Utilities.isCapslockEnabled())
+    }
 
-        updateMenuBarIcon(isCapsLockOn: isCapslockEnabled())
-
-        NSEvent.addGlobalMonitorForEvents(matching: .flagsChanged, handler: { [weak self] _ in
+    private func monitorCapsLockChanges() {
+        NSEvent.addGlobalMonitorForEvents(matching: .flagsChanged) { [weak self] _ in
             guard let self = self else { return }
-            let isOn = self.isCapslockEnabled()
+            let isOn = Utilities.isCapslockEnabled()
             self.updateMenuBarIcon(isCapsLockOn: isOn)
-        })
+        }
     }
 
-    @objc func quitApp() {
-        NSApplication.shared.terminate(self)
-    }
-
-    func isCapslockEnabled() -> Bool {
-        return NSEvent.modifierFlags.intersection(.deviceIndependentFlagsMask).contains(.capsLock)
-    }
-
-    func redCircleImage() -> NSImage {
-        let size = NSSize(width: 14, height: 14)
-        let image = NSImage(size: size)
-
-        image.lockFocus()
-        NSColor.red.set()
-        NSBezierPath(ovalIn: NSRect(x: 0, y: 0, width: size.width, height: size.height)).fill()
-        image.unlockFocus()
-
-        return image
-    }
-
-    func updateMenuBarIcon(isCapsLockOn: Bool) {
+    private func updateMenuBarIcon(isCapsLockOn: Bool) {
         if isCapsLockOn {
-            let image = redCircleImage()
-
+            let image = Utilities.redCircleImage()
             statusItem.button?.image = image
         } else {
             statusItem.button?.image = nil

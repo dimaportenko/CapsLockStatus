@@ -10,6 +10,7 @@
 		718C1D9E2AC8C1190019A29E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718C1D9D2AC8C1190019A29E /* AppDelegate.swift */; };
 		718C1DA22AC8C11A0019A29E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 718C1DA12AC8C11A0019A29E /* Assets.xcassets */; };
 		718C1DA52AC8C11A0019A29E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718C1DA32AC8C11A0019A29E /* Main.storyboard */; };
+		718C1DAD2AC9FC650019A29E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718C1DAC2AC9FC650019A29E /* Utilities.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -18,6 +19,7 @@
 		718C1DA12AC8C11A0019A29E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		718C1DA42AC8C11A0019A29E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		718C1DA62AC8C11A0019A29E /* CapsLockStatus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CapsLockStatus.entitlements; sourceTree = "<group>"; };
+		718C1DAC2AC9FC650019A29E /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,7 @@
 			isa = PBXGroup;
 			children = (
 				718C1D9D2AC8C1190019A29E /* AppDelegate.swift */,
+				718C1DAC2AC9FC650019A29E /* Utilities.swift */,
 				718C1DA12AC8C11A0019A29E /* Assets.xcassets */,
 				718C1DA32AC8C11A0019A29E /* Main.storyboard */,
 				718C1DA62AC8C11A0019A29E /* CapsLockStatus.entitlements */,
@@ -128,6 +131,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				718C1DAD2AC9FC650019A29E /* Utilities.swift in Sources */,
 				718C1D9E2AC8C1190019A29E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -262,12 +266,13 @@
 		718C1DAA2AC8C11A0019A29E /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Icon;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=macosx*]" = Icon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CapsLockStatus/CapsLockStatus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = F2MP7G7FM5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -279,7 +284,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dimaportenko.capslockstatus.CapsLockStatus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -290,12 +295,13 @@
 		718C1DAB2AC8C11A0019A29E /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_APPICON_NAME = Icon;
+				"ASSETCATALOG_COMPILER_APPICON_NAME[sdk=macosx*]" = Icon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = CapsLockStatus/CapsLockStatus.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
-				CURRENT_PROJECT_VERSION = 1;
+				CURRENT_PROJECT_VERSION = 2;
 				DEVELOPMENT_TEAM = F2MP7G7FM5;
 				ENABLE_HARDENED_RUNTIME = YES;
 				GENERATE_INFOPLIST_FILE = YES;
@@ -307,7 +313,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.0.2;
 				PRODUCT_BUNDLE_IDENTIFIER = com.dimaportenko.capslockstatus.CapsLockStatus;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = YES;
