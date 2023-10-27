@@ -11,6 +11,7 @@
 		718C1DA22AC8C11A0019A29E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 718C1DA12AC8C11A0019A29E /* Assets.xcassets */; };
 		718C1DA52AC8C11A0019A29E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 718C1DA32AC8C11A0019A29E /* Main.storyboard */; };
 		718C1DAD2AC9FC650019A29E /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = 718C1DAC2AC9FC650019A29E /* Utilities.swift */; };
+		71F193252AEC56F500FEF766 /* NSImage+TintColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71F193242AEC56F400FEF766 /* NSImage+TintColor.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +21,7 @@
 		718C1DA42AC8C11A0019A29E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		718C1DA62AC8C11A0019A29E /* CapsLockStatus.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = CapsLockStatus.entitlements; sourceTree = "<group>"; };
 		718C1DAC2AC9FC650019A29E /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
+		71F193242AEC56F400FEF766 /* NSImage+TintColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSImage+TintColor.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +56,7 @@
 			children = (
 				718C1D9D2AC8C1190019A29E /* AppDelegate.swift */,
 				718C1DAC2AC9FC650019A29E /* Utilities.swift */,
+				71F193242AEC56F400FEF766 /* NSImage+TintColor.swift */,
 				718C1DA12AC8C11A0019A29E /* Assets.xcassets */,
 				718C1DA32AC8C11A0019A29E /* Main.storyboard */,
 				718C1DA62AC8C11A0019A29E /* CapsLockStatus.entitlements */,
@@ -132,6 +135,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				718C1DAD2AC9FC650019A29E /* Utilities.swift in Sources */,
+				71F193252AEC56F500FEF766 /* NSImage+TintColor.swift in Sources */,
 				718C1D9E2AC8C1190019A29E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
