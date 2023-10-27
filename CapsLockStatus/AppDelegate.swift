@@ -51,6 +51,5 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         image.isTemplate = true  // Allow tinting
         let coloredImage = isCapsLockOn ? image.image(with: NSColor.systemRed) : image.image(with: NSColor.white)
         statusItem.button?.image = coloredImage
-        //        statusItem.button?.contentTintColor = isCapsLockOn ? NSColor.systemRed : NSColor.systemGray
     }
 }
